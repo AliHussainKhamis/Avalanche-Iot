@@ -8,6 +8,20 @@
 <body>
     <h1>All Devices</h1>
 
-    <a href="/device/new">Add Device</a>
+     <a href="/device/new">Add Device</a>
+  <ul>
+    <% allDevices.forEach(device => { %>  
+      <li>
+        <strong><%= device.name %></strong> 
+
+        <%= device.deviceId %><br>
+        <%= device.location %><br>
+        <%= device.createdAt %><br>
+
+      </li>
+      <hr>
+    <% }) %>
+  </ul>
+
 </body>
 </html>

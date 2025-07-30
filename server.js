@@ -15,7 +15,6 @@ app.use(morgan("dev")) // logs the requests as they are sent to our sever in the
 
 app.set('view engine', 'ejs');
 
-
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -23,6 +22,8 @@ app.use(
     saveUninitialized: true,
   })
 ); // uses the secret session code in the .env to encrypt the token
+
+
 
 // connect to database
 conntectToDB()
