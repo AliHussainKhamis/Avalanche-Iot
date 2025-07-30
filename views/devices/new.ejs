@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add a New Device</h1><br>
+        <form action="/device" method="post">
+
+        <label for="deviceId">Device Id:</label>
+        <input id="deviceId" name="deviceId" type="number"> <br> <br>
+
+        <label for="name">Name:</label>
+        <input id="name" name="name" type="String"> <br><br>
+
+        <label for="location">Location:</label>
+        <input name="location" id="location" type="String"> <br><br>
+
+        <label for="mqttTopic">MQTT Topic::</label>
+        <input name="mqttTopic" id="mqttTopic" type="String"> <br><br>
+
+        <label for="mode">Mode:</label>
+        <input name="mode" id="mode" type="String"> <br><br>
+
+        <label for="status">Status:</label>
+        <input name="status" id="status" type="String"> <br><br>
+
+        <label for="creator">Creator:</label>  
+        <select multiple name="author" id="author"> 
+            
+        </select> <br><br>
+
+        <label for="createdAt">Created At:</label>
+        <input name="createdAt" id="createdAt" type="String"> <br><br>
+
+
+        <button>Connect Device</button>
+    </form>
+
+  <a href="/device">All Devices</a>
+</body>
+</html>
