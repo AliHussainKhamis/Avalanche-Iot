@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Device</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>G Hub - Edit Device</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
-  <h1>Edit Device (<%= foundDevice.name %>)</h1><br>
 
-  <form action="/device/<%= foundDevice._id %>?_method=PUT" method="POST">
+  <!-- 3D Background -->
+  <model-viewer 
+    src="/assets/SpaceTravel.glb"
+    alt="3D Background"
+    auto-rotate 
+    camera-controls 
+    camera-orbit="0deg 90deg 0.4m" 
+    enable-zoom>
+  </model-viewer>
 
-    <label for="name">Name:</label>
-    <input id="name" name="name" type="text" value="<%= foundDevice.name %>"> <br><br>
+  <!-- Title & Tagline -->
+  <h1 class="ghub-title">G Hub</h1>
+  <div class="tagline">
+    <strong>G Hub:</strong> Transforming connectivity for a smarter future.<br>
+    Our platform effortlessly integrates IoT devices, offering real-time insights and strong security to enhance your operations.
+  </div>
 
-    <label for="description">Description:</label>
-    <input id="description" name="description" type="text" value="<%= foundDevice.description %>"> <br><br>
+  <!-- Form Container -->
+  <div class="auth-container">
+    <h2>Edit: <%= foundDevice.name %></h2>
 
-    <label for="mqttTopic">Mqtt Topic:</label>
-    <input id="mqttTopic" name="mqttTopic" type="text" value="<%= foundDevice.mqttTopic %>"> <br><br>
+    <form action="/device/<%= foundDevice._id %>?_method=PUT" method="POST">
+      <label for="name">Name:</label>
+      <input id="name" name="name" type="text" value="<%= foundDevice.name %>" required>
 
-    <label for="location">Location:</label>
-    <input id="location" name="location" type="text" value="<%= foundDevice.location %>"> <br><br>
+      <label for="description">Description:</label>
+      <input id="description" name="description" type="text" value="<%= foundDevice.description %>">
 
-    <label for="createdAt">Created At:</label>
-    <input id="createdAt" name="createdAt" type="text" value="<%= foundDevice.createdAt.toISOString().slice(0, 10) %>"> <br><br>
+      <label for="mqttTopic">MQTT Topic:</label>
+      <input id="mqttTopic" name="mqttTopic" type="text" value="<%= foundDevice.mqttTopic %>" required>
 
-    <button type="submit">Update Device</button>
-  </form>
+      <label for="location">Location:</label>
+      <input id="location" name="location" type="text" value="<%= foundDevice.location %>" required>
 
-  <br>
-  <a href="/device">Back to Devices</a>
+      <label for="createdAt">Created At:</label>
+      <input id="createdAt" name="createdAt" type="text" value="<%= foundDevice.createdAt.toISOString().slice(0, 10) %>" disabled>
+
+      <button type="submit" class="btn full">Update Device</button>
+    </form>
+
+    <div style="margin-top: 1.5rem; text-align: center;">
+      <a href="/device" class="btn full">← Back to Devices</a>
+    </div>
+  </div>
+
 </body>
 </html>
