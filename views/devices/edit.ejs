@@ -10,11 +10,14 @@
 
   <form action="/device/<%= foundDevice._id %>?_method=PUT" method="POST">
 
-    <label for="deviceId">Device Id:</label>
-    <input id="deviceId" name="deviceId" type="number" value="<%= foundDevice.deviceId %>"> <br><br>
-
     <label for="name">Name:</label>
     <input id="name" name="name" type="text" value="<%= foundDevice.name %>"> <br><br>
+
+    <label for="description">Description:</label>
+    <input id="description" name="description" type="text" value="<%= foundDevice.description %>"> <br><br>
+
+    <label for="mqttTopic">Mqtt Topic:</label>
+    <input id="mqttTopic" name="mqttTopic" type="text" value="<%= foundDevice.mqttTopic %>"> <br><br>
 
     <label for="location">Location:</label>
     <input id="location" name="location" type="text" value="<%= foundDevice.location %>"> <br><br>
@@ -26,6 +29,6 @@
   </form>
 
   <br>
-  <a href="/device">Back to All Devices</a>
+  <a href="/device">Back to Devices</a>
 </body>
 </html>

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
-const upload = require('../middleware/upload'); // ✅ multer config
+const upload = require('../middleware/upload'); //  multer config
 
 // Register Form
 router.get('/register', (req, res) => {
@@ -18,7 +18,7 @@ router.post('/register', upload.single('profilePic'), async (req, res) => {
     name,
     email,
     passwordHash,
-    profilePic: req.file ? `/uploads/${req.file.filename}` : undefined // ✅ Save image path
+    profilePic: req.file ? `/uploads/${req.file.filename}` : undefined //  Save image path
   });
 
   await user.save();

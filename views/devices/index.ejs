@@ -28,8 +28,7 @@
     <% allDevices.forEach(device => { %>  
       <li>
         <h2><strong><%= device.name %></strong></h2>  
-        <p><strong>Location:</strong> <%= device.location %></p>
-        <p><strong>Mqtt Topic:</strong> <%= device.mqttTopic %></p>
+        <p><strong>Description:</strong> <%= device.description %></p>
 
         <!-- Actions -->
         <a href="/device/<%= device._id %>">Details</a> | 

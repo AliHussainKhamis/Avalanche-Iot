@@ -10,16 +10,19 @@
 
   <form action="/device" method="post">
 
-    <label for="mqttTopic">MQTT Topic:</label>
-    <input id="mqttTopic" name="mqttTopic" type="text" required><br><br>
-    
     <label for="name">Name:</label>
     <input id="name" name="name" type="text" required><br><br>
+
+    <label for="description">Description:</label>
+    <input id="description" name="description" type="text"><br><br>
+
+    <label for="mqttTopic">MQTT Topic:</label>
+    <input id="mqttTopic" name="mqttTopic" type="text" required><br><br>
 
     <label for="location">Location:</label>
     <input id="location" name="location" type="text" required><br><br>
 
-    <!-- 🔥 Removed manual creator selector -->
+    <!--  Removed manual creator selector , filtered in the backend -->
     
     <button type="submit">Register Device</button>
   </form>
