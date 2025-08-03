@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Device</title>
+</head>
+<body>
+  <h1>Edit Device (<%= foundDevice.name %>)</h1><br>
+
+  <form action="/device/<%= foundDevice._id %>?_method=PUT" method="POST">
+
+    <label for="deviceId">Device Id:</label>
+    <input id="deviceId" name="deviceId" type="number" value="<%= foundDevice.deviceId %>"> <br><br>
+
+    <label for="name">Name:</label>
+    <input id="name" name="name" type="text" value="<%= foundDevice.name %>"> <br><br>
+
+    <label for="location">Location:</label>
+    <input id="location" name="location" type="text" value="<%= foundDevice.location %>"> <br><br>
+
+    <label for="createdAt">Created At:</label>
+    <input id="createdAt" name="createdAt" type="text" value="<%= foundDevice.createdAt.toISOString().slice(0, 10) %>"> <br><br>
+
+    <button type="submit">Update Device</button>
+  </form>
+
+  <br>
+  <a href="/device">Back to All Devices</a>
+</body>
+</html>

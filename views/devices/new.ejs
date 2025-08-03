@@ -1,44 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add a New Device</title>
 </head>
 <body>
-    <h1>Add a New Device</h1><br>
-        <form action="/device" method="post">
+  <h1>Add a New Device</h1>
 
-        <label for="deviceId">Device Id:</label>
-        <input id="deviceId" name="deviceId" type="number"> <br> <br>
+  <form action="/device" method="post">
 
-        <label for="name">Name:</label>
-        <input id="name" name="name" type="String"> <br><br>
+    <label for="mqttTopic">MQTT Topic:</label>
+    <input id="mqttTopic" name="mqttTopic" type="text" required><br><br>
+    
+    <label for="name">Name:</label>
+    <input id="name" name="name" type="text" required><br><br>
 
-        <label for="location">Location:</label>
-        <input name="location" id="location" type="String"> <br><br>
+    <label for="location">Location:</label>
+    <input id="location" name="location" type="text" required><br><br>
 
-        <!-- <label for="mqttTopic">MQTT Topic:</label>
-        <input name="mqttTopic" id="mqttTopic" type="String"> <br><br>
+    <!-- 🔥 Removed manual creator selector -->
+    
+    <button type="submit">Register Device</button>
+  </form>
 
-        <label for="mode">Mode:</label>
-        <input name="mode" id="mode" type="String"> <br><br>
-
-        <label for="status">Status:</label>
-        <input name="status" id="status" type="String"> <br><br>
-
-        <label for="creator">Creator:</label>  
-        <select multiple name="author" id="author"> 
-            
-        </select> <br><br> -->
-
-        <label for="createdAt">Created At:</label>
-        <input name="createdAt" id="createdAt" type="String"> <br><br>
-
-
-        <button>Connect Device</button>
-    </form>
-
-  <a href="/device">All Devices</a>
+  <a href="/device">Back to All Devices</a>
 </body>
 </html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Control Device</title>
+</head>
+<body>
+  <h1>Control: <%= device.name %></h1>
+  <p>Topic: <%= device.mqttTopic %></p>
+
+  <form action="/device/<%= device._id %>/control" method="POST">
+    <button name="command" value="on">Turn ON</button>
+    <button name="command" value="off">Turn OFF</button>
+  </form>
+
+  <a href="/device">⬅ Back to Devices</a>
+</body>
+</html>
