@@ -1,19 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Control Device</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>G Hub - Control Device</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
-  <h1>YOUR DASHBOARD</h1>
-  <h2>THING: <%= device.name %></h2>
-  <p>Topic: <%= device.mqttTopic %></p> <br>
 
-  <form action="/device/<%= device._id %>/control" method="POST">
-    <button name="command" value="on">Turn ON</button>
-    <button name="command" value="off">Turn OFF</button>
-  </form>
+  <!-- 3D Background -->
+  <model-viewer 
+    src="/assets/SpaceTravel.glb"
+    alt="3D Background"
+    auto-rotate 
+    camera-controls 
+    camera-orbit="0deg 90deg 0.4m" 
+    enable-zoom>
+  </model-viewer>
 
-  <br>
-  <a href="/device">⬅ Back to Devices</a>
+  <!-- Title & Tagline -->
+  <h1 class="ghub-title">G Hub</h1>
+  <div class="tagline">
+    <strong>G Hub:</strong> Transforming connectivity for a smarter future.<br>
+    Our platform effortlessly integrates IoT devices, offering real-time insights and strong security to enhance your operations.
+  </div>
+
+  <!-- Device Control Panel -->
+  <div class="auth-container">
+    <h2>Control: <%= device.name %></h2>
+    <p><strong>MQTT Topic:</strong> <%= device.mqttTopic %></p>
+
+    <form action="/device/<%= device._id %>/control" method="POST">
+      <button type="submit" name="command" value="on" class="btn full control">Turn ON</button>
+      <button type="submit" name="command" value="off" class="btn full danger">Turn OFF</button>
+    </form>
+
+    <div style="margin-top: 1.5rem; text-align: center;">
+      <a href="/device" class="btn full">← Back to Devices</a>
+    </div>
+  </div>
+
 </body>
 </html>
