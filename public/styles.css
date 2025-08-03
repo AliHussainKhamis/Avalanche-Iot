@@ -4,6 +4,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: black;
   color: #fff;
+  box-sizing: border-box;
 }
 
 /* 3D Background */
@@ -44,25 +45,31 @@ model-viewer {
   position: relative;
 }
 
+h2 {
+  text-align: center;
+}
+
 /* LOGIN/REGISTER FORM CONTAINER */
 .auth-container {
   max-width: 400px;
-  margin: 2rem auto;
-  background: rgba(255, 255, 255, 0.92);
+  margin: 100px auto;
+  background: rgba(255, 255, 255, 0.9);
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 10px;
   color: #000;
-  position: relative;
-  z-index: 1;
 }
 
 /* FORM ELEMENTS */
 input {
+  display: block;
   width: 100%;
+  max-width: 100%;
   padding: 0.6rem;
   margin-bottom: 1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 /* BUTTON */
@@ -90,4 +97,137 @@ button:hover {
 
 .auth-container a:hover {
   text-decoration: underline;
+}
+
+/* ============================
+   DASHBOARD STYLES (index.ejs)
+============================ */
+
+/* Top nav bar */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  padding: 1rem 2rem;
+}
+
+.nav-bar h1 {
+  margin: 0;
+  color: white;
+}
+
+/* Profile section */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Logout link */
+.logout-btn {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logout-btn:hover {
+  text-decoration: underline;
+}
+
+/* Main content section */
+main {
+  padding: 2rem;
+}
+
+.action-bar {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.device-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Device card */
+.device-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.device-card h2 {
+  color: #fff;
+  margin-top: 0;
+}
+
+.device-card p {
+  margin-bottom: 1rem;
+}
+
+/* Device action buttons (Details/Edit) */
+.device-actions {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+}
+
+.btn.small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.btn.danger {
+  background-color: #dc2626;
+}
+
+.btn.danger:hover {
+  background-color: #b91c1c;
+}
+
+/* Full-width buttons: Control + Delete */
+.btn.full {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1.2rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* Dark blue Control button */
+.btn.control {
+  background-color: #1e3a8a;
+}
+
+.btn.control:hover {
+  background-color: #1d4ed8;
 }
