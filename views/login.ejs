@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="/styles.css">
+  <title>G Hub - Login</title>
 </head>
 <body>
-  <h2>Login</h2>
-  <form action="/login" method="POST">
-    <input type="email" name="username" placeholder="Email" required /><br/>
-    <input type="password" name="password" placeholder="Password" required /><br/>
-    <button type="submit">Login</button>
-  </form>
-  <p>Don't have an account? <a href="/register">Register</a></p>
+
+  <!-- 3D Background -->
+  <model-viewer 
+    src="/assets/SpaceTravel.glb"
+    alt="3D Background"
+    auto-rotate 
+    camera-controls 
+    camera-orbit="0deg 90deg 0.4m" 
+    enable-zoom>
+  </model-viewer>
+
+  <!-- G Hub Title -->
+  <h1 class="ghub-title">G Hub</h1>
+
+  <!-- Tagline -->
+  <div class="tagline">
+    <strong>G Hub:</strong> Transforming connectivity for a smarter future.<br>
+    Our platform effortlessly integrates IoT devices, offering real-time insights and strong security to enhance your operations.
+  </div>
+
+  <!-- Login Form -->
+  <div class="auth-container">
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+      <input type="email" name="username" placeholder="Email" required /><br><br>
+      <input type="password" name="password" placeholder="Password" required /><br><br>
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="/register">Register</a></p>
+  </div>
+
 </body>
 </html>

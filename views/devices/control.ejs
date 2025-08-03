@@ -4,7 +4,8 @@
   <title>Control Device</title>
 </head>
 <body>
-  <h1>Control Panel for: <%= device.name %></h1>
+  <h1>YOUR DASHBOARD</h1>
+  <h2>THING: <%= device.name %></h2>
   <p>Topic: <%= device.mqttTopic %></p> <br>
 
   <form action="/device/<%= device._id %>/control" method="POST">

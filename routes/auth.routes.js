@@ -34,7 +34,7 @@ router.get('/login', (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const foundUser = await User.findOne({ email: req.body.username });
-    console.log("🧠 Found user:", foundUser);
+    console.log("Found user:", foundUser);
 
     const validPassword = bcrypt.compareSync(req.body.password, foundUser.passwordHash);
     console.log("🔐 Password valid:", validPassword);

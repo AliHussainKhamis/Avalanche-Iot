@@ -138,7 +138,8 @@ router.post("/:id/control", isAuthenticated, async (req, res) => {
     const command = req.body.command;
     mqttClient.publish(device.mqttTopic, command);
     res.redirect(`/device/${device._id}/control`);
-  } catch (error) {
+  }
+   catch (error) {
     console.error("❌ MQTT Error:", error);
     res.status(500).send("Failed to send command");
   }
