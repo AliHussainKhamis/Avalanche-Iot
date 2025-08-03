@@ -7,6 +7,18 @@ const methodOverride = require("method-override")
 const conntectToDB = require('./config/db')
 const session = require("express-session")
 
+// const expressLayouts = require('express-ejs-layouts'); // Layout form
+
+// ... Other requires
+
+app.use(express.static('public')); // for serving styles.css
+app.set('view engine', 'ejs');
+
+// app.use(expressLayouts); //  Enable EJS layouts
+
+app.set('layout', 'layouts/main'); //  Default layout
+
+
 // Middleware
 app.use(express.static('public')); //all static files are in the public folder
 app.use(express.urlencoded({ extended: false })); // this will allow us to see the data being sent in the POST or PUT
@@ -23,7 +35,10 @@ app.use(
   })
 ); // uses the secret session code in the .env to encrypt the token
 
-
+app.use((req,res,next)=>{
+    res.locals.user = req.session.user || null
+    next()
+})
 
 // connect to database
 conntectToDB()
