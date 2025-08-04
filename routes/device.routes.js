@@ -28,12 +28,13 @@ router.get("/new", isAuthenticated, (req, res) => {
 // CREATE — Save device with mqttTopic and creator
 router.post("/", isAuthenticated, async (req, res) => {
   try {
-    const { mqttTopic, name, location } = req.body;
+    const { mqttTopic, name, location, description } = req.body;
 
     const device = new Device({
       mqttTopic,
       name,
       location,
+      description,
       creator: req.session.user._id
     });
 
@@ -138,8 +139,7 @@ router.post("/:id/control", isAuthenticated, async (req, res) => {
     const command = req.body.command;
     mqttClient.publish(device.mqttTopic, command);
     res.redirect(`/device/${device._id}/control`);
-  }
-   catch (error) {
+  } catch (error) {
     console.error("❌ MQTT Error:", error);
     res.status(500).send("Failed to send command");
   }

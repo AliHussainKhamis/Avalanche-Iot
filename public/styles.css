@@ -206,7 +206,7 @@ main {
 }
 
 .btn.danger {
-  background-color: #dc2626;
+  background-color: #003082;
 }
 
 .btn.danger:hover {
@@ -225,7 +225,7 @@ main {
 
 /* Dark blue Control button */
 .btn.control {
-  background-color: #1e3a8a;
+  background-color: #FFC917;  
 }
 
 .btn.control:hover {
