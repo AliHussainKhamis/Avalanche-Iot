@@ -53,7 +53,7 @@ router.post("/login", async (req, res) => {
     res.redirect("/device");
 
   } catch (error) {
-    console.log("❌ Error during login:", error);
+    console.log("Error during login:", error);
     res.send("Login failed");
   }
 });

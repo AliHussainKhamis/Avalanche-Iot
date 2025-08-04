@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 /* GENERAL */
 body {
   margin: 0;
@@ -184,7 +186,7 @@ main {
 }
 
 .btn {
-  background-color: #2563eb;
+  background-color: #0A174E;
   color: white;
   padding: 0.5rem 1rem;
   text-decoration: none;
@@ -197,7 +199,7 @@ main {
 }
 
 .btn:hover {
-  background-color: #1d4ed8;
+  background-color: #6f6d72 ;
 }
 
 .btn.small {
@@ -206,15 +208,16 @@ main {
 }
 
 .btn.danger {
-  background-color: #003082;
+  background-color: #0A174E;
 }
 
 .btn.danger:hover {
-  background-color: #b91c1c;
+  background-color: #6f6d72 ;
 }
 
 /* Full-width buttons: Control + Delete */
 .btn.full {
+  color:white;
   display: block;
   width: 100%;
   padding: 0.6rem 1.2rem;
@@ -225,9 +228,9 @@ main {
 
 /* Dark blue Control button */
 .btn.control {
-  background-color: #FFC917;  
+  background-color: #a3a1a5  ;  
 }
 
 .btn.control:hover {
-  background-color: #1d4ed8;
+  background-color: #6f6d72 ;
 }

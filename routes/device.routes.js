@@ -15,7 +15,7 @@ router.get("/", isAuthenticated, async (req, res) => {
       user: req.session.user
     });
   } catch (error) {
-    console.error("❌ Error loading devices:", error);
+    console.error("Error loading devices:", error);
     res.status(500).send("Error loading devices");
   }
 });
@@ -41,7 +41,7 @@ router.post("/", isAuthenticated, async (req, res) => {
     await device.save();
     res.redirect("/device");
   } catch (error) {
-    console.error("❌ Failed to create device:", error.message);
+    console.error("Failed to create device:", error.message);
     res.status(500).send("Failed to create device");
   }
 });
@@ -91,7 +91,7 @@ router.put("/:id", isAuthenticated, async (req, res) => {
     await Device.findByIdAndUpdate(req.params.id, req.body);
     res.redirect("/device");
   } catch (error) {
-    console.error("❌ Update failed:", error.message);
+    console.error(" Update failed:", error.message);
     res.status(500).send("Update failed");
   }
 });
@@ -109,7 +109,7 @@ router.delete("/:id", isAuthenticated, async (req, res) => {
     await Device.findByIdAndDelete(req.params.id);
     res.redirect("/device");
   } catch (error) {
-    console.error("❌ Delete failed:", error.message);
+    console.error(" Delete failed:", error.message);
     res.status(500).send("Delete failed");
   }
 });
