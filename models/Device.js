@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const deviceSchema = new mongoose.Schema({
-  mqttTopic: { type: String, required: true }, // ✅ now stores MQTT topic
+  mqttTopic: { type: String, required: true }, // 
   description: String,
   name: { type: String, required: true },
   location: { type: String, required: true },

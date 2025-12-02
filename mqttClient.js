@@ -5,11 +5,11 @@ const mqtt = require('mqtt');
 const client = mqtt.connect('mqtt://broker.hivemq.com');
 
 client.on('connect', () => {
-  console.log("🟢 Connected to HiveMQ MQTT Broker");
+  console.log("Connected to HiveMQ MQTT Broker");
 });
 
 client.on('error', (err) => {
-  console.error("❌ MQTT Connection Error:", err);
+  console.error("MQTT Connection Error:", err);
 });
 
 module.exports = client;

@@ -37,7 +37,7 @@ router.post("/login", async (req, res) => {
     console.log("Found user:", foundUser);
 
     const validPassword = bcrypt.compareSync(req.body.password, foundUser.passwordHash);
-    console.log("🔐 Password valid:", validPassword);
+    console.log("Password valid:", validPassword);
 
     if (!validPassword) {
       return res.send("Password is incorrect");
@@ -46,10 +46,10 @@ router.post("/login", async (req, res) => {
     req.session.user = {
       name: foundUser.name,
       _id: foundUser._id.toString(),
-      profilePic: foundUser.profilePic // ✅ store for later use
+      profilePic: foundUser.profilePic //  store for later use
     };
 
-    console.log("✅ Session stored:", req.session.user);
+    console.log("Session stored:", req.session.user);
     res.redirect("/device");
 
   } catch (error) {
